@@ -1,0 +1,15 @@
+{
+  "name": "Express-Sequelize",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hjunor/Api-Express-Sequelize.git",
+  "author": "Heberth Junor Teixeira Aguiar <hjunor@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev":"nodemon node index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
