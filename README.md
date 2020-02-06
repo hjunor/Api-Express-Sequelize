@@ -2,7 +2,7 @@
 
 Api express com  banco de dados MySql.
 
-#Aplicação da plataforma
+# Aplicação da plataforma
 
 Api desenvolvida com NodeJS e Sequelize, uma plataforma simples de perguntas e respostas no estilo ASK. 
 
