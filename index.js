@@ -23,14 +23,32 @@ app.use(bodyParser.json());
 
 //Routes
 app.get('/',(req,res)=>{
-  Pergunta.findAll({raw:true}).then((pergunta)=>{
-    console.log(pergunta);
-  })
-    res.render('index')
-
+  Pergunta.findAll({raw:true, order:[
+    ['createdAt','DESC']]})// ASC = Crescente || DESC = decresente
+    .then((pergunta)=>{
+    res.render('index',{
+      perguntas:pergunta
+    })  
+})
 });
 app.get('/question', (req, res) => {
  res.render('perguntar');
+})
+app.get('/pergunta/:id',(req, res)=>{
+   var id = req.params.id;
+   Pergunta.findOne({
+     raw:true,
+     where:{ id:id }
+   }).then((pergunta)=>{
+      if(pergunta!=undefined){
+         res.render('pergunta',{
+           pergunta:pergunta
+         })
+         console.log(pergunta)
+      }else{
+         res.redirect('/');
+      }
+   })
 })
 app.post('/savequestion', (req, res)=>{
     var titulo = req.body.titulos
