@@ -10,3 +10,6 @@ nav{
 .bor-der{
     border-radius: 4px;
 }
+.btn-cor:hover{
+    background-color: red;
+}
