@@ -4,10 +4,12 @@ const bodyParser = require('body-parser');
 const port = 3000
 const connection = require('./database/database')
 const Pergunta = require('./database/perguntas')
+const Resposta = require('./database/resposta')
 //Database connection 
 
 connection.authenticate().then(()=>{
   console.log('tudo certo')
+  
 }).catch((erro)=>{
   console.log('erro');
 })
@@ -41,10 +43,16 @@ app.get('/pergunta/:id',(req, res)=>{
      where:{ id:id }
    }).then((pergunta)=>{
       if(pergunta!=undefined){
-         res.render('pergunta',{
-           pergunta:pergunta
+        Resposta.findAll({where:{
+          perguntaId:pergunta.id
+        }, order:[
+          ['createdAt','DESC']]
+      }).then(respostas =>{
+          res.render('pergunta',{
+           pergunta:pergunta,
+           respostas:respostas
          })
-         console.log(pergunta)
+        })
       }else{
          res.redirect('/');
       }
@@ -60,6 +68,21 @@ app.post('/savequestion', (req, res)=>{
     res.redirect('/');
   })
 })
+
+app.post('/responder', (req,res) => {
+  var corpo = req.body.corpo
+  var perguntaId = req.body.pergunta
+  console.log(perguntaId);
+  Resposta.create({
+    corpo:corpo,
+    perguntaId:perguntaId,
+  }).then(()=>{
+    res.redirect('/pergunta/'+perguntaId)
+    console.log(perguntaId);
+  })
+ 
+});
+
 app.listen(port, () => console.log(`server start`))
 
 //aula importações de variaveis...
