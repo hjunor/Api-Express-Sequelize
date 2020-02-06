@@ -2,10 +2,32 @@
 <body>
   <%- include ('./partials/nav.ejs') %>
   <div class='container'>
+  <div class='container bg-light bor-der'>
     <hr>
     <h1><%= pergunta.titulo%></h1>
     <p><%= pergunta.description%></p>
     <hr>
+  </div>
+    <form method='POST' action='/responder' >
+      <h3>Responda</h3>
+      <label>Resposta:</label>
+      <textarea placeholder='Digite sua resposta' class='form-control' name='corpo'
+      ></textarea>
+      <input type="hidden" name="pergunta" value="<%= pergunta.id %>">
+      <button type="submit" class=' mt-2 btn btn-success' >Responder</button>
+    </form>
+    <hr>
+    <h3>Reposta</h3>
+    <hr>
+     <% respostas.map(res =>{ %>
+    <div class='card mt-2'>
+    <div class='card-body'>
+      <p><%= res.corpo%></p>
+      
+    </div>
+    
+    </div>
+    <%})%>
   </div>
 </body>
 <%- include ('./partials/footer.ejs') %>
