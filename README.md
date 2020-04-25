@@ -1,21 +1,44 @@
-# Api-Express-Sequelize
+<h1 align="center" color="red">
+Api TodoList
+</h1>
 
-Api express com  banco de dados MySql.
+<h4 align="center">
+  ☕ Code and Coffee
+</h4>
 
-# Aplicação da plataforma
+<p align="center">
+  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-contribuir">Como contribuir</a>
+</p>
 
-Api desenvolvida com NodeJS e Sequelize, uma plataforma simples de perguntas e respostas no estilo ASK. 
+<br>
 
-# Scripts
+## :rocket: Tecnologias
 
-'yarn dev' para iniciar a aplicão.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-# Engine
+- [Node.js](https://nodejs.org/en/)
+- [MySQL](https://www.mysql.com/)
+- [EJS](https://ejs.co/)
+- [Sequelize](https://sequelize.org/)
 
-O EJS é uma engine de visualização, com ele conseguimos de uma maneira fácil e simples transportar dados do back-end para o front-end, basicamente conseguimos utilizar códigos em javascript no html de nossas páginas.
+## 💻 Projeto
 
-# Gerenciador de pacotes
+Esse projeto é para ralização de um site de perguntas e respostas estilo ASK.
 
-yarn
+- Os usuários serão capaz de criar perguntas.
+
+- Os usuários serão capaz de responder perguntas.
+
+## 🤔 Como contribuir
+
+- Faça um fork desse repositório;
+- Cria uma branch com a sua feature: `git checkout -b minha-feature`.
+- Faça commit das suas alterações: `git commit -m 'feat: Minha nova feature'`.
+- Faça push para a sua branch: `git push origin minha-feature`.
+
+Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
+
 
 
